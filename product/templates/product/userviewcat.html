@@ -1,0 +1,25 @@
+<html>
+<title>Categories</title>
+<body>
+<h1 align=center>{{user.name}}</h1>
+<center><table width=90% border=1>
+<tr align=center>
+	<td width=10%><b>{{"Category Name"}}</td>
+	<td width=10%><b>{{"Products"}}</td>
+</tr>
+{% for cat in catobj%}
+<tr align=center>
+	<td width=10%> {{cat.name}}</td>
+	<td width=10%>
+		{% for pro in cat.product_set.all %}
+			{{pro.name}}<br>
+		{%endfor%}
+	</td>
+	
+
+
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<title></title>
+<head>
+{% load staticfiles %}
+	<link rel="stylesheet" href='{% static 'product/css/bootstrap.min.css' %}' />
+	<link rel="stylesheet" href='{% static 'product/css/bootstrap-theme.min.css' %}' />
+	<link rel="stylesheet" href='{% static 'product/css/font-awesome.css' %}' />
+	<link rel="stylesheet" href='{% static 'product/css/font-awesome.min.css' %}' />
+</head>
+<body>
+<div class="container">
+	{% block 'container' %}
+	{%endblock%}
+</div>
+<script src="{% static 'product/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

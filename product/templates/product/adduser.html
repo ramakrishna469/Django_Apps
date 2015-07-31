@@ -1,0 +1,12 @@
+<html>
+{% extends 'sample.html' %}
+{% block 'container' %}
+<body>
+<form action="{% url 'product:adduser' %}" method='POST'>
+{% csrf_token %}
+{{form.as_p}}
+<button class='btn btn-info' type='submit'>Submit</button>
+</form>
+</body>
+{% endblock %}
+</html>

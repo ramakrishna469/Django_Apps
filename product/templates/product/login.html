@@ -1,0 +1,17 @@
+{% extends "product/header.html" %}
+{% block text %}
+
+<html>
+<fieldset>
+<legend>Login Here</legend>
+<form action="{% url 'product:login'%}" method='POST'>
+{{form.as_p}}
+<input type='submit' value='Login'>
+<br><br>*Login Required
+{% csrf_token %}
+</form>
+<a href="{% url 'product:register' %}"><button>Register here</button></a>
+</fieldset>
+</html>
+
+{% endblock text %}

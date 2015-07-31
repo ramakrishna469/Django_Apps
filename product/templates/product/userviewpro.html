@@ -1,0 +1,20 @@
+<html>
+<title>Products</title>
+<body>
+<h1 align=center>{{user.name}}</h1>
+<center><table width=90% border=1>
+<tr align=center>
+	<td width=10%><b>{{"Product Name"}}</td>
+	<td width=10%><b>{{"Product Price"}}</td>
+</tr>
+{% for pro in li%}
+	{% for p in pro %}
+<tr align=center>
+	<td width=10%> {{p.name}}</td>
+	<td width=10%> {{p.price}}</td>
+</tr>
+	{%endfor%}
+{%endfor%}
+</table>
+</body>
+</html>

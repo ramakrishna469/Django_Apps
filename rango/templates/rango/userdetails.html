@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{users.0}}</title>
+</head>
+<body>
+<fieldset>
+	<legend>{{users.0}}</legend>
+	<table align='center' border=0>
+		<tr align=center>
+			<td>Username</td>
+			<td>:</td>
+			<td>{{users.0.username}}</td>
+			<td rowspan=3><img src = {{profile.0.picture.url}}  width=50 height=60 border=1 ></td>
+		</tr>
+		<tr></tr>
+		<tr align=center>
+			<td>FirstName</td>
+			<td>:</td>
+			<td>{{users.0.first_name}}</td>
+		</tr>
+		<tr></tr>
+		<tr align=center>
+			<td>LastName</td>
+			<td>:</td>
+			<td>{{users.0.last_name}}</td>
+		</tr>
+		<tr></tr>
+		<tr align=center>
+			<td>Email</td>
+			<td>:</td>
+			<td>{{users.0.email}}</td>
+		</tr>
+		<tr></tr>
+		<tr align=center>
+			<td>Course</td>
+			<td>:</td>
+			<td>{{profile.0.course}}</td>
+		</tr>
+		<tr></tr>
+		<tr align=center>
+			<td>Branch</td>
+			<td>:</td>
+			<td>{{profile.0.branch}}</td>
+		</tr>
+		<tr></tr>
+		<tr align=center>
+			<td>Percentage</td>
+			<td>:</td>
+			<td>{{profile.0.percentage}}</td>
+		</tr>
+		<tr></tr>
+		<tr align=center>
+			<td>Mobile</td>
+			<td>:</td>
+			<td>{{profile.0.mobile}}</td>
+		</tr>
+
+
+	</table>
+<a href="{% url 'rango:logout' %}"><button>Logout</button></a>
+</fieldset>
+</body>
+</html>

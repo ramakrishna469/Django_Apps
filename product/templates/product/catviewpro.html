@@ -1,0 +1,25 @@
+<html>
+<title>Products</title>
+<body>
+<h1 align=center>{{cat.name}}</h1>
+<center><table width=90% border=1>
+<tr align=center>
+	<td width=10%><b>{{"Product Name"}}</td>
+	<td width=10%><b>{{"Product Price"}}</td>
+	<td width=10%><b>{{"Product Users"}}</td>
+</tr>
+{% for pro in li%}
+<tr align=center>
+	<td width=10%> {{pro.name}}</td>
+	<td width=10%> {{pro.price}}</td>
+	<td width=10%>
+		{%for cat in cat.user.all %}
+			{{cat.email}}<br>
+		{%endfor%}
+	</td>
+
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>

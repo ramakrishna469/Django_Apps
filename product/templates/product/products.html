@@ -1,0 +1,52 @@
+{% extends 'sample.html' %}
+{% block 'container' %}
+<html>
+<title>Products</title>
+<body>
+{% load product_filters %}
+<h1 align=center>PRODUCTS</h1>
+<h5>Total Items in the basket : {{basket_obj.count}}</h5>
+<center><table width=90% class='table table-responsive'>
+<tr align=center class='success'>
+	<td width=10%><b>{{"Product Name"}}</td>
+	<td width=10%><b>{{"Product Category"}}</td>
+	<td width=10%><b>{{"Product Price"}}</td>
+	<td width=10%><b>{{"Product Users"}}</td>
+	<td width=10%><b>{{""}}</td>
+	<td width=10%><b>{{""}}</td>
+	<td width=10%><b>{{""}}</td>
+</tr>
+{% for pro in probj%}
+<tr align=center class='active'>
+	<td width=10%> {{pro.name}}</td>
+	<td width=10%>{{pro.category.name}}</td>
+	<td width=10%>{{pro.price}}</td>
+	<td width=10%>
+		{% for user in pro.category.user.all %}
+			{{user.email}}
+		{% endfor %}
+	</td>
+
+	<td width=10%><a href='./delpro/{{pro.id}}/'> <button class='btn btn-danger'>
+	<span class="glyphicon glyphicon-trash">&nbsp;Delete Product</button></a></td>
+	<td width=10%><a href='./editpro/{{pro.id}}/'> <button class='btn btn-primary'>
+	<span class="glyphicon glyphicon-edit">&nbsp;Edit Product</button></a></td>
+
+	{% if request.user|check:pro %}
+		<td width=10%>Added to basket</td>
+	{% else %}
+		<td width=10%><a href="{% url 'product:basket' pro.id %}"> <button class='btn btn-info'>&nbsp;Add to Basket</button></a></td>
+	{%endif%}
+</tr>
+{%endfor%}
+</table>
+<br>
+<center><a href='./addproduct/'> <button class='btn btn-info'>Add Product</button></a>
+<br><br>
+<center><a href="{% url 'product:logout' %}"> <button class='btn btn-danger'><span class="glyphicon glyphicon-log-out">&nbsp;Logout</button></a>
+
+</body>
+<br>
+{{d1|timecheck}}
+</html>
+{% endblock %}

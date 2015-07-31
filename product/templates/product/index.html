@@ -1,0 +1,25 @@
+{% extends 'sample.html' %}
+{% block 'container' %}
+<html>
+<body>
+<table>
+<br><br>
+<tr>
+	<td><a href='./users/'><div class="well" align='center'>Users</div></a><br></td>
+</tr>
+
+<tr>
+	<td><a href='./categories/'><div class="well" align='center'>Categories</div></a><br></td>
+</tr>
+
+<tr>
+	<td><a href="{% url 'product:products' %}"><div class="well" align='center'>Products</div></a><br></td>
+</tr>
+
+</table>
+<br>
+<a href="./logout/"> <button class='btn btn-danger'><span class="glyphicon glyphicon-log-out">&nbsp;Logout</button></a>
+
+</body>
+</html>
+{% endblock %}

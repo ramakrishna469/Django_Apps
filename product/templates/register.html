@@ -1,0 +1,10 @@
+<html>
+<fieldset>
+<legend>Register Here</legend>
+<form action="{% url 'product:register'%}" method='POST'>
+{% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='Submit'>
+</form>
+</fieldset>
+</html>

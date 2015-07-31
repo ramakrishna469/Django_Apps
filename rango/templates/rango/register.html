@@ -1,0 +1,13 @@
+<html>
+<body>
+<fieldset>
+<legend>Register Here</legend>
+<form action="{% url 'rango:register' %}" method='POST' enctype="multipart/form-data">
+{% csrf_token %}
+{{form.1.as_p}}
+{{form.0.as_p}}
+<input type="submit" value="Submit">
+</form>
+</fieldset>
+</body>
+</html>

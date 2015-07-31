@@ -1,0 +1,40 @@
+{% extends 'sample.html' %}
+{% block 'container' %}
+<html>
+<title>Categories</title>
+<body>
+<h1 align=center>CATEGORIES</h1>
+<center><table width=90% class='table table-responsive'>
+<tr align=center class='success'>
+	<td width=10%><b>{{"Category Name"}}</td>
+	<td width=10%><b>{{"No.of Products"}}</td>
+	<td width=10%><b>{{"Emails"}}</td>
+	<td width=10%><b>{{""}}</td>
+	<td width=10%><b>{{""}}</td>
+	<td width=10%><b>{{""}}</td>
+</tr>
+{% for cat in catobj%}
+<tr align=center class='active'>
+	<td width=10%> {{cat.name}}</td>
+	<td width=10%>{{cat.product_set.all.count}}</td>
+	<td width=10%>
+	{% for mail in cat.user.all %}
+		 {{mail.email}}<br>
+	{% endfor %}</td>
+	<td width=10%><a href='./delcat/{{cat.id}}/'> <button class='btn btn-danger'>
+	<span class="glyphicon glyphicon-trash">&nbsp;Delete Category</button></a></td>
+	<td width=10%><a href='./editcat/{{cat.id}}/'> <button class='btn btn-primary'>
+	<span class="glyphicon glyphicon-edit">&nbsp;Edit Category</button></a></td>
+	<td width=10%><a href='./catviewpro/{{cat.id}}/'> <button class='btn btn-success'>
+	<span class="glyphicon glyphicon-eye-open">&nbsp;View Products</button></a></td>
+
+</tr>
+{%endfor%}
+</table>
+<br>
+<center><a href='./addcategory/'> <button class='btn btn-info'>Add Category</button></a>
+<br><br>
+<center><a href="{% url 'product:logout' %}"> <button class='btn btn-danger'><span class="glyphicon glyphicon-log-out">&nbsp;Logout</button></a>
+</body>
+</html>
+{% endblock %}
